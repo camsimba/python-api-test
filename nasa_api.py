@@ -14,7 +14,7 @@ def APOD():
     im = Image.open(requests.get(img_url, stream=True).raw)
     im.show()
 
-def mars_weather():
+def InSight():
     params = {'api_key': API_KEY}
     response = requests.get('https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0')
     res = response.json()
