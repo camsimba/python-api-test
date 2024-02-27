@@ -1,6 +1,7 @@
 import requests 
 from PIL import Image 
 from html2image import Html2Image
+import os
 
 API_KEY = 'BM6A8mdPSJe7jAq4w4He4GX5ttAVgeKRPcoMsrey'
 
@@ -35,3 +36,10 @@ def mars_weather():
     im.paste(im_i, (0,0))
     im.paste(im_c, (0, 675))
     im.show()
+
+    if os.path.exists("insight_weather.png"):
+        os.remove("insight_weather.png")
+    else:   print("The file (insight_weather.png) does not exist")
+    if os.path.exists("curiosity_weather.png"):
+        os.remove("curiosity_weather.png")
+    else:   print("The file (curiosity_weather.png) does not exist")
