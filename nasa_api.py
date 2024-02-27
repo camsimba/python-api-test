@@ -4,6 +4,8 @@ from html2image import Html2Image
 import os
 import random
 import json
+
+#harmless api key to expose
 API_KEY = 'BM6A8mdPSJe7jAq4w4He4GX5ttAVgeKRPcoMsrey'
 
 def APOD():
@@ -16,7 +18,6 @@ def APOD():
     im.show()
 
 def InSight():
-    params = {'api_key': API_KEY}
     response = requests.get('https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0')
     res = response.json()
     if len(res['sol_keys']) == 0:
@@ -47,7 +48,6 @@ def InSight():
     else:   print("The file (curiosity_weather.png) does not exist")
 
 def MRP():
-    params= {'api_key': API_KEY}
     sol = random.randint(1, 1000)
     response = requests.get(f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key=DEMO_KEY').json()
 
