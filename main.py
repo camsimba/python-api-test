@@ -5,6 +5,7 @@ api_info = [
     ['Index', 'Endpoint', 'Desc'],
     [0, 'APOD', 'Returns the Astronomy Picture of the Day'],
     [1, 'InSight', 'Returns data + info panel of Martian weather'],
+    [2, 'MRP', 'Opens a random photo on Mars taken from a random camera between sol date 1 - 1000']
 ]
 
 def main():
