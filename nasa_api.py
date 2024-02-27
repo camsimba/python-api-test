@@ -22,7 +22,7 @@ def mars_weather():
         print('No recent data available')
     else: return res
 
-    #Display weather report images
+    #Screenshot scraped url and stitch two images together to display
     hti = Html2Image()
     hti.screenshot(url='https://mars.nasa.gov/layout/embed/image/insightweather/', save_as='insight_weather.png')
     im_i = Image.open('insight_weather.png')
@@ -37,6 +37,7 @@ def mars_weather():
     im.paste(im_c, (0, 675))
     im.show()
 
+    #Clean up saved images
     if os.path.exists("insight_weather.png"):
         os.remove("insight_weather.png")
     else:   print("The file (insight_weather.png) does not exist")
